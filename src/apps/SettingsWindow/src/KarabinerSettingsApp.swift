@@ -44,6 +44,7 @@ struct KarabinerSettingsApp: App {
         InvisibleView()
     }
 }
+}
 
 class AppDelegate: NSObject, NSApplicationDelegate {
   public func applicationWillFinishLaunching(_: Notification) {
