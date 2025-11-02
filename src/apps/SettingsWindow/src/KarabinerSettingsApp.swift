@@ -1,15 +1,5 @@
 import SwiftUI
 
-struct InvisibleView: View {
-    @ObservedObject private var settings = LibKrbn.Settings.shared
-    @ObservedObject private var appIcons = AppIcons.shared
-
-    var body: some View {
-        Color.clear
-            .frame(width: 0, height: 0)
-    }
-}
-
 @main
 struct KarabinerSettingsApp: App {
   @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
@@ -40,13 +30,19 @@ struct KarabinerSettingsApp: App {
   }
 
   var body: some Scene {
-    Window(
-      "Karabiner-Elements Settings",
-      id: "main",
-      content: {
-        ContentView()
-      })
-   }
+    Window("Karabiner-Elements Settings") {
+    ContentView()
+        .background(
+            GeometryReader { _ in
+                DispatchQueue.main.async {
+                    if let window = NSApplication.shared.windows.first {
+                        window.setContentSize(NSSize(width: 1, height: 1))
+                    }
+                }
+            }
+        )
+    }
+  }
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate {

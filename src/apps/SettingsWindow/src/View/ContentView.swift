@@ -48,12 +48,12 @@ struct ContentView: View {
         }
       }
     }
-    .frame(width: 0, height: 0)
-//    .frame(
-//      minWidth: 1100,
-//      maxWidth: .infinity,
-//      minHeight: 680,
-//      maxHeight: .infinity
-//    )
+//    .frame(width: 1, height: 1)
+    .frame(
+      minWidth: 1100,
+      maxWidth: .infinity,
+      minHeight: 680,
+      maxHeight: .infinity
+    )
   }
 }
