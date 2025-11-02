@@ -32,15 +32,7 @@ struct KarabinerSettingsApp: App {
   var body: some Scene {
     Window("Karabiner-Elements Settings") {
     ContentView()
-        .background(
-            GeometryReader { _ in
-                DispatchQueue.main.async {
-                    if let window = NSApplication.shared.windows.first {
-                        window.setContentSize(NSSize(width: 1, height: 1))
-                    }
-                }
-            }
-        )
+        .hidden()
     }
   }
 }
