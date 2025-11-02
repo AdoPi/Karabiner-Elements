@@ -40,10 +40,13 @@ struct KarabinerSettingsApp: App {
   }
 
   var body: some Scene {
-    WindowGroup {
+    Window(
+      "Karabiner-Elements Settings",
+      id: "main",
+      content: {
         InvisibleView()
-    }
-}
+      })
+   }
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate {
