@@ -1,5 +1,15 @@
 import SwiftUI
 
+struct InvisibleView: View {
+    @ObservedObject private var settings = LibKrbn.Settings.shared
+    @ObservedObject private var appIcons = AppIcons.shared
+
+    var body: some View {
+        Color.clear
+            .frame(width: 0, height: 0)
+    }
+}
+
 @main
 struct KarabinerSettingsApp: App {
   @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
@@ -30,15 +40,9 @@ struct KarabinerSettingsApp: App {
   }
 
   var body: some Scene {
-    Window(
-      "Karabiner-Elements Settings",
-      id: "main",
-      content: {
-          EmptyView()
-        // ContentView()
-      })
-//      Settings { EmptyView() }
-  }
+    WindowGroup {
+        InvisibleView()
+    }
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -62,6 +66,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     _ event: NSAppleEventDescriptor,
     withReplyEvent _: NSAppleEventDescriptor
   ) {
+
+
     // If the application is already running when the handler is called, there's no issue.
     // However, if the application is launched via an AppleEvent, the window may not display correctly.
     // To avoid this problem, the handler will explicitly reopen the application to ensure that the window is shown properly.
