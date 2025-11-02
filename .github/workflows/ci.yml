@@ -24,5 +24,15 @@ jobs:
         run: make package
       - name: appendix
         run: ruby scripts/reduce-logs.rb 'make -C appendix'
+
+      - name: Upload build
+        uses: actions/upload-artifact@v3
+        with:
+          name: pkg
+          path: Karabiner-Elements/*.dmg
+          
       - name: tests
         run: ruby scripts/reduce-logs.rb 'make -C tests'
+
+
+          
