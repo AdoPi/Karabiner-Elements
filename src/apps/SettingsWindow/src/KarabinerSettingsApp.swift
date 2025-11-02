@@ -44,7 +44,7 @@ struct KarabinerSettingsApp: App {
       "Karabiner-Elements Settings",
       id: "main",
       content: {
-        InvisibleView()
+        ContentView()
       })
    }
 }

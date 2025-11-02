@@ -10,9 +10,9 @@ struct ContentView: View {
       ContentMainView()
 
       if contentViewStates.showDoctorAlert {
-        OverlayAlertView {
-          DoctorAlertView()
-        }
+        // OverlayAlertView {
+        // DoctorAlertView()
+        // }
       } else if contentViewStates.showSettingsAlert {
         // When performing a clean install, many alerts are displayed.
         // Among them, SettingsAlertView is always displayed first,
@@ -20,38 +20,40 @@ struct ContentView: View {
         // If the display priority of SettingsAlertView is low,
         // it briefly appears before being replaced by other alerts, causing a flickering effect.
         // To avoid this, the display priority of SettingsAlertView should be set higher.
-        OverlayAlertView {
-          SettingsAlertView()
-        }
+
+       // OverlayAlertView {
+       //   SettingsAlertView()
+       //  }
       } else if contentViewStates.showInputMonitoringPermissionsAlert {
-        OverlayAlertView {
-          InputMonitoringPermissionsAlertView()
-        }
+//        OverlayAlertView {
+//          InputMonitoringPermissionsAlertView()
+//        }
       } else if contentViewStates.showServicesNotRunningAlert {
-        OverlayAlertView {
-          ServicesNotRunningAlertView()
-        }
+//        OverlayAlertView {
+//          ServicesNotRunningAlertView()
+//        }
       } else if contentViewStates.showDriverVersionMismatchedAlert {
-        OverlayAlertView {
-          DriverVersionMismatchedAlertView()
-        }
+//        OverlayAlertView {
+//          DriverVersionMismatchedAlertView()
+//        }
       } else if contentViewStates.showDriverNotActivatedAlert {
         if #available(macOS 15.0, *) {
-          OverlayAlertView {
-            DriverNotActivatedAlertView()
-          }
+//          OverlayAlertView {
+//            DriverNotActivatedAlertView()
+//          }
         } else {
-          OverlayAlertView {
-            DriverNotActivatedAlertViewMacOS14()
-          }
+//          OverlayAlertView {
+//            DriverNotActivatedAlertViewMacOS14()
+//          }
         }
       }
     }
-    .frame(
-      minWidth: 1100,
-      maxWidth: .infinity,
-      minHeight: 680,
-      maxHeight: .infinity
-    )
+    .frame(width: 0, height: 0)
+//    .frame(
+//      minWidth: 1100,
+//      maxWidth: .infinity,
+//      minHeight: 680,
+//      maxHeight: .infinity
+//    )
   }
 }
