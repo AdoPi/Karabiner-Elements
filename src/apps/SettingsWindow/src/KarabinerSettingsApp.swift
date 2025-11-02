@@ -30,12 +30,14 @@ struct KarabinerSettingsApp: App {
   }
 
   var body: some Scene {
-    Window(
-      "Karabiner-Elements Settings",
-      id: "main",
-      content: {
-        ContentView()
-      })
+//    Window(
+//      "Karabiner-Elements Settings",
+//      id: "main",
+//      content: {
+//        ContentView()
+//      })
+      Settings { EmptyView() }
+
   }
 }
 
