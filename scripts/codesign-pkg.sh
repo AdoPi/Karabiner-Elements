@@ -12,7 +12,11 @@ echo -ne '\033[33;40m'
 readonly CODE_SIGN_IDENTITY=$(bash $(dirname $0)/get-installer-codesign-identity.sh)
 
 if [[ -z $CODE_SIGN_IDENTITY ]]; then
-    echo "Skip codesign"
+    echo "force signing PKG"
+    APP_PATH=$(find . -name "*.app" | head -n 1)
+    echo "App found at: $APP_PATH"
+    codesign --force --deep --sign - "$APP_PATH"
+
     exit 0
 fi
 
