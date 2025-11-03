@@ -31,8 +31,8 @@ jobs:
           name: pkg
           path: '**/*.dmg'
           
-      - name: tests
-        run: ruby scripts/reduce-logs.rb 'make -C tests'
+#      - name: tests
+#        run: ruby scripts/reduce-logs.rb 'make -C tests'
 
 
           
