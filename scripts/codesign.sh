@@ -16,14 +16,23 @@ if [[ -z $CODE_SIGN_IDENTITY ]]; then
     # exit 0
 fi
 
+#do_codesign() {
+#    codesign \
+#        --force \
+#        --deep \
+#        --options runtime \
+#        --sign "$CODE_SIGN_IDENTITY" \
+#        "$1"
+#}
+
 do_codesign() {
     codesign \
         --force \
         --deep \
-        --options runtime \
-        --sign "$CODE_SIGN_IDENTITY" \
+        --sign - \
         "$1"
 }
+
 
 if [[ ! -e "$1" ]]; then
     echo "Invalid argument: '$1'"
