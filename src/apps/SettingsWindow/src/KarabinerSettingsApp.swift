@@ -30,12 +30,13 @@ struct KarabinerSettingsApp: App {
   }
 
   var body: some Scene {
-      Settings { EmptyView() } 
+      Window(
+        "Karabiner-Elements Settings",
+        id: "main",
+        content: {
+              ContentView()
+      })
 
-      // Window("Karabiner-Elements Settings", id: "main").hidden()
-//    Window("Karabiner-Elements Settings", id: "main") {
-//        EmptyView()
-//    }
 //    .windowStyle(.hiddenTitleBar)
 //    .defaultSize(width: 1, height: 1)
   }

@@ -6,6 +6,16 @@ struct MiscView: View {
   var body: some View {
     ScrollView {
       VStack(alignment: .leading, spacing: 24.0) {
+        GroupBox(label: Text("Startup")) {
+          VStack(alignment: .leading, spacing: 12.0) {
+            Toggle(isOn: $settings.showSettingsWindowOnStartup) {
+              Text("Show Settings Window on startup (Default: on)")
+            }
+            .switchToggleStyle()
+          }
+          .padding()
+        }
+
         GroupBox(label: Text("Extra tool: Multitouch Extension")) {
           VStack(alignment: .leading, spacing: 12.0) {
             Toggle(isOn: $settings.enableMultitouchExtension) {

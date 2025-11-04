@@ -222,7 +222,7 @@ private:
         // settings alert
         //
 
-        if (c->get_selected_profile().get_virtual_hid_keyboard()->get_keyboard_type_v2() == "") {
+        if (c->get_global_configuration().get_show_settings_window_on_startup()) {
           application_launcher::launch_settings();
         }
       }
