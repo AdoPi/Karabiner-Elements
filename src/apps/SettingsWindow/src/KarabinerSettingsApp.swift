@@ -30,7 +30,9 @@ struct KarabinerSettingsApp: App {
   }
 
   var body: some Scene {
-      Window("Karabiner-Elements Settings", id: "main").hidden()
+      Settings { EmptyView() } 
+
+      // Window("Karabiner-Elements Settings", id: "main").hidden()
 //    Window("Karabiner-Elements Settings", id: "main") {
 //        EmptyView()
 //    }
