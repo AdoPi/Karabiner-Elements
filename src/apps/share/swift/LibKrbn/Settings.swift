@@ -147,7 +147,8 @@ extension LibKrbn {
       reorderSameTimestampInputEventsToPrioritizeModifiers =
         libkrbn_core_configuration_get_global_configuration_reorder_same_timestamp_input_events_to_prioritize_modifiers()
       showSettingsWindowOnStartup =
-        libkrbn_core_configuration_get_global_configuration_show_settings_window_on_startup()
+        //libkrbn_core_configuration_get_global_configuration_show_settings_window_on_startup()
+        libkrbn_core_configuration_get_global_configuration_check_for_updates_on_startup()
 
       updateSystemDefaultProfileExists()
 
@@ -828,9 +829,9 @@ extension LibKrbn {
     @Published var showSettingsWindowOnStartup: Bool = false {
       didSet {
         if didSetEnabled {
-          libkrbn_core_configuration_set_global_configuration_show_settings_window_on_startup(
-            showSettingsWindowOnStartup
-          )
+          //libkrbn_core_configuration_set_global_configuration_show_settings_window_on_startup(
+          //  showSettingsWindowOnStartup
+          //)
           save()
         }
       }
